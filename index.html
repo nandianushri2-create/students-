@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Marks Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- INTRO PAGE -->
+  <section id="introPage" class="page active">
+    <div class="intro-card">
+      <div class="logo">🎓</div>
+      <h1>Student Marks Predictor</h1>
+      <p class="tagline">Enter a student's details and previous grades to get an estimated final mark out of 20.</p>
+      <ul class="features">
+        <li>📝 17 quick questions</li>
+        <li>📊 Instant score out of 20</li>
+        <li>💡 See what helps and what hurts</li>
+      </ul>
+      <button id="startBtn" class="btn primary big">Get started</button>
+    </div>
+  </section>
+
+  <!-- HOME PAGE (FORM) -->
+  <section id="homePage" class="page">
+    <header class="topbar">
+      <h2>🎓 Student Marks Predictor</h2>
+      <button id="backBtn" class="btn ghost" type="button">Back to intro</button>
+    </header>
+
+    <main class="container">
+      <h2 class="title">Enter student information</h2>
+      <form id="studentForm" novalidate>
+
+        <fieldset>
+          <legend>Personal &amp; family</legend>
+          <div class="grid">
+            <label>Age
+              <input type="number" name="age" min="14" max="25" placeholder="e.g. 17" required />
+            </label>
+            <label>Mother education (0-4)
+              <select name="Medu" required>
+                <option value="">Select</option>
+                <option value="0">0 – none</option>
+                <option value="1">1 – primary</option>
+                <option value="2">2 – 5th to 9th grade</option>
+                <option value="3">3 – secondary</option>
+                <option value="4">4 – higher education</option>
+              </select>
+            </label>
+            <label>Father education (0-4)
+              <select name="Fedu" required>
+                <option value="">Select</option>
+                <option value="0">0 – none</option>
+                <option value="1">1 – primary</option>
+                <option value="2">2 – 5th to 9th grade</option>
+                <option value="3">3 – secondary</option>
+                <option value="4">4 – higher education</option>
+              </select>
+            </label>
+            <label>Family relationship quality (1-5)
+              <select name="famrel" required>
+                <option value="">Select</option>
+                <option value="1">1 – very bad</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 – excellent</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Study &amp; support</legend>
+          <div class="grid">
+            <label>Study time (1-4)
+              <select name="studytime" required>
+                <option value="">Select</option>
+                <option value="1">1 – under 2 hours/week</option>
+                <option value="2">2 – 2 to 5 hours</option>
+                <option value="3">3 – 5 to 10 hours</option>
+                <option value="4">4 – over 10 hours</option>
+              </select>
+            </label>
+            <label>Past failures (0-3)
+              <select name="failures" required>
+                <option value="">Select</option>
+                <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3 or more</option>
+              </select>
+            </label>
+            <label>School support (yes/no)
+              <select name="schoolsup" required>
+                <option value="">Select</option><option value="yes">Yes</option><option value="no">No</option>
+              </select>
+            </label>
+            <label>Family support (yes/no)
+              <select name="famsup" required>
+                <option value="">Select</option><option value="yes">Yes</option><option value="no">No</option>
+              </select>
+            </label>
+            <label>Wants higher education (yes/no)
+              <select name="higher" required>
+                <option value="">Select</option><option value="yes">Yes</option><option value="no">No</option>
+              </select>
+            </label>
+            <label>Internet access (yes/no)
+              <select name="internet" required>
+                <option value="">Select</option><option value="yes">Yes</option><option value="no">No</option>
+              </select>
+            </label>
+            <label>Absences
+              <input type="number" name="absences" min="0" max="100" placeholder="e.g. 4" required />
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Lifestyle</legend>
+          <div class="grid">
+            <label>Free time (1-5)
+              <select name="freetime" required>
+                <option value="">Select</option>
+                <option value="1">1 – very low</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 – very high</option>
+              </select>
+            </label>
+            <label>Going out (1-5)
+              <select name="goout" required>
+                <option value="">Select</option>
+                <option value="1">1 – very low</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 – very high</option>
+              </select>
+            </label>
+            <label>Workday alcohol consumption (1-5)
+              <select name="Dalc" required>
+                <option value="">Select</option>
+                <option value="1">1 – very low</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 – very high</option>
+              </select>
+            </label>
+            <label>Health (1-5)
+              <select name="health" required>
+                <option value="">Select</option>
+                <option value="1">1 – very bad</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 – very good</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Previous grades</legend>
+          <div class="grid">
+            <label>First period grade G1 (0-20)
+              <input type="number" name="G1" min="0" max="20" placeholder="0 – 20" required />
+            </label>
+            <label>Second period grade G2 (0-20)
+              <input type="number" name="G2" min="0" max="20" placeholder="0 – 20" required />
+            </label>
+          </div>
+        </fieldset>
+
+        <p id="errorMsg" class="error" role="alert"></p>
+        <div class="actions">
+          <button type="reset" class="btn ghost">Clear</button>
+          <button type="submit" class="btn primary">Predict marks</button>
+        </div>
+      </form>
+    </main>
+  </section>
+
+  <!-- RESULT PAGE -->
+  <section id="resultPage" class="page">
+    <header class="topbar"><h2>🎓 Student Marks Predictor</h2></header>
+    <main class="container result-wrap">
+      <div class="result-card">
+        <p class="small">Predicted final mark</p>
+        <div class="gauge">
+          <svg viewBox="0 0 120 120">
+            <circle class="track" cx="60" cy="60" r="52" />
+            <circle class="bar" id="gaugeBar" cx="60" cy="60" r="52" />
+          </svg>
+          <div class="gauge-text"><span id="scoreNum">0</span><small>/ 20</small></div>
+        </div>
+        <h3 id="gradeLabel"></h3>
+        <p id="gradeMsg" class="muted"></p>
+
+        <div class="factors">
+          <div><h4>👍 Helping the score</h4><ul id="goodList"></ul></div>
+          <div><h4>⚠️ Pulling it down</h4><ul id="badList"></ul></div>
+        </div>
+
+        <div class="actions center">
+          <button id="againBtn" class="btn primary" type="button">Predict another student</button>
+        </div>
+        <p class="disclaimer">This is an estimate based on general trends, not a guarantee of actual results.</p>
+      </div>
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
